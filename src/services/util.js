@@ -3,5 +3,5 @@ export const formatPrice = (x, currency) => {
 };
 
 export const productsAPI =
-  'http://localhost:8001/api/menus';
+  'https://react-restaurant-backend.herokuapp.com/api/menus';
 // export const productsAPI = "http://localhost:8001/api/products";
