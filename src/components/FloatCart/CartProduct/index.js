@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import Thumb from './../../Thumb';
 import { formatPrice } from '../../../services/util';
 
 class CartProduct extends Component {
-  static propTypes = {
-    product: PropTypes.object.isRequired,
-    removeProduct: PropTypes.func.isRequired
-  };
 
   constructor(props) {
     super(props);
@@ -29,8 +24,6 @@ class CartProduct extends Component {
   render() {
     const { removeProduct } = this.props;
     const { product } = this.state;
-
-    console.log(product);
 
     const classes = ['shelf-item'];
 

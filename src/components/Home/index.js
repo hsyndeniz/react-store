@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { fetchProducts } from '../../services/products/actions';
@@ -10,11 +9,7 @@ import ProductList from './ProductList';
 import './style.scss';
 
 class Home extends Component {
-  static propTypes = {
-    fetchProducts: PropTypes.func.isRequired,
-    products: PropTypes.array.isRequired,
-  };
-
+  
   componentDidMount() {
     this.handleFetchProducts();
   }

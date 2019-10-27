@@ -20,7 +20,6 @@ export class productWithSubMenu extends Component {
       submenu = menu;
       return submenu;
     });
-    console.log(subMenus)
     this.setState({ subMenus })
   }
   
@@ -53,7 +52,6 @@ export class productWithSubMenu extends Component {
           <h2> {this.props.product.name} </h2>
           <Row vertical='center'>
             { this.state.subMenus.map(p => {
-              console.log(p)
               return (
                 <Column flexGrow={1} style={{ minWidth: 200 }} horizontal='center'>
                   <h3> { p.description } </h3>

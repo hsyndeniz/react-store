@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 
@@ -7,8 +6,6 @@ import Thumb from '../../../Thumb';
 import { addProduct } from '../../../../services/cart/actions';
 
 const Product = ({ product, menus, addProduct }) => {
-
-  console.log(menus)
 
   const slugifyUrl = (input) => {
     return String(input).toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
@@ -27,11 +24,6 @@ const Product = ({ product, menus, addProduct }) => {
       </div>
     </Link>
   );
-};
-
-Product.propTypes = {
-  product: PropTypes.object.isRequired,
-  addProduct: PropTypes.func.isRequired
 };
 
 export default connect(

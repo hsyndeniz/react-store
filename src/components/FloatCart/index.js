@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { loadCart, removeProduct } from '../../services/cart/actions';
@@ -9,16 +8,6 @@ import CartProduct from './CartProduct';
 import './style.scss';
 
 class FloatCart extends Component {
-  static propTypes = {
-    loadCart: PropTypes.func.isRequired,
-    updateCart: PropTypes.func.isRequired,
-    cartProducts: PropTypes.array.isRequired,
-    newProduct: PropTypes.object,
-    removeProduct: PropTypes.func,
-    productToRemove: PropTypes.object,
-    productToChange: PropTypes.object,
-  };
-
   state = {
     isOpen: false
   };
@@ -42,8 +31,7 @@ class FloatCart extends Component {
   };
 
   addProduct = product => {
-    console.log('f: addProduct');
-    console.log(product);
+
     const { cartProducts, updateCart } = this.props;
     let productAlreadyInCart = false;
 
@@ -75,7 +63,7 @@ class FloatCart extends Component {
     const { totalPrice } = this.props.cartTotal;
 
     alert(
-      `Checkout - Subtotal: ${totalPrice.toFixed(2)}`
+      `Sipariş Verildi: ${totalPrice.toFixed(2)}`
     );
   };
 
@@ -120,28 +108,28 @@ class FloatCart extends Component {
             <span className="bag">
               <span className="bag__quantity">{cartTotal.productQuantity}</span>
             </span>
-            <span className="header-title">Cart</span>
+            <span className="header-title">Sepet</span>
           </div>
 
           <div className="float-cart__shelf-container">
             {products}
             {!products.length && (
               <p className="shelf-empty">
-                Add some products in the cart <br />
+                Sepetinizde ürün bulunmuyor <br />
                 :)
               </p>
             )}
           </div>
 
           <div className="float-cart__footer">
-            <div className="sub">SUBTOTAL</div>
+            <div className="sub">TOPLAM</div>
             <div className="sub-price">
               <p className="sub-price__val">
                 {`${cartTotal.totalPrice.toFixed(2)} ₺`}
               </p>
             </div>
             <div onClick={() => this.proceedToCheckout()} className="buy-btn">
-              Checkout
+              Satın Al
             </div>
           </div>
         </div>

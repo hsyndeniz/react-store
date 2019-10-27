@@ -11,11 +11,6 @@ export class Menu extends Component {
     }
   }
   
-  componentDidMount() {
-    console.log('-**---');
-    console.log(this.props);
-  }
-
   render() {
     return (
       <React.Fragment>
@@ -31,7 +26,6 @@ export class Menu extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return { menu: state.cart.productToAdd, menus: state.products.products }
 };
 

@@ -1,9 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import ProductWithSubMenu from './ProductWithSubMenu';
-
 import Thumb from '../../../Thumb';
+import ProductWithSubMenu from './ProductWithSubMenu';
 import { addProduct } from '../../../../services/cart/actions';
 
 const Product = ({ product, menus, addProduct }) => {
@@ -21,11 +19,6 @@ const Product = ({ product, menus, addProduct }) => {
       <div className="shelf-item__buy-btn"> { product.price }₺ </div>
     </div>
   ) : (<ProductWithSubMenu menus={menus} product={product} />);
-};
-
-Product.propTypes = {
-  product: PropTypes.object.isRequired,
-  addProduct: PropTypes.func.isRequired
 };
 
 export default connect(

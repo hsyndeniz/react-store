@@ -7,7 +7,6 @@ export const fetchProducts = (callback) => dispatch => {
   return axios
     .get(productsAPI)
     .then(res => {
-      console.log(res.data)
       let { menus } = res.data;
       if (!!callback) {
         callback();
